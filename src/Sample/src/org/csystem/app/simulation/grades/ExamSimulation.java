@@ -13,7 +13,7 @@ public class ExamSimulation {
     private static void drawHistogram(Classroom classroom, int maxGrade)
     {
         int [] data = classroom.getHistogramData(maxGrade);
-        ArrayUtil.print(data);
+        ArrayUtil.println(data);
         ArrayUtil.drawHistogram(data, 20, '-');
     }
 
@@ -74,7 +74,7 @@ public class ExamSimulation {
         System.out.printf("Histogram of %s lecture:%n", m_exam.getLectureName());
         int [] data = m_exam.getHistogramData();
 
-        ArrayUtil.print(data);
+        ArrayUtil.println(data);
         ArrayUtil.drawHistogram(data, 20, '-');
     }
 

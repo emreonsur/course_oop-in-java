@@ -12,6 +12,7 @@ public class NumberUtil {
 
 	private static final String [] ONES_TR = {"", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz"};
 	private static final String [] TENS_TR = {"", "on", "yirmi", "otuz", "kırk", "elli", "altmış", "yetmiş", "seksen", "doksan"};
+	private static final String [] UNITS_TR = {"", "bin", "milyon", "milyar", "trilyon", "katrilyon", "kentilyon"};
 
 	private static String numToStr3DigitsTR(int val)
 	{
@@ -81,7 +82,20 @@ public class NumberUtil {
 
 	public static int [] getDigitsInThrees(long a)
 	{
-		throw new UnsupportedOperationException("Not yet implemented");
+		a = Math.abs(a);
+
+		int digitCount = countDigits(a);
+		int n = digitCount / 3;
+
+		if (digitCount % 3 != 0)
+			++n;
+
+		int [] digitsInThrees = new int[n];
+
+		for (int i = n - 1; i >= 0; digitsInThrees[i--] = (int)(a % 1000), a /= 1000)
+			;
+
+		return digitsInThrees;
 	}
 
 	public static int getDigitsPowSum(int a)
@@ -178,7 +192,16 @@ public class NumberUtil {
 
 	public static String numToStrTR(long a)
 	{
-		throw new UnsupportedOperationException("Not yet implemented");
+		int [] digitsInThrees = getDigitsInThrees(a);
+
+		StringBuilder sb = new StringBuilder();
+
+		int len = digitsInThrees.length;
+
+		for (int i = 0; i < len; ++i)
+			sb.append(numToStr3DigitsTR(digitsInThrees[i])).append(" ").append(UNITS_TR[len - 1 - i]).append(" ");
+
+		return sb.substring(0, sb.length() - 1);
 	}
 
 	public static int reverse(int val)

@@ -20,7 +20,7 @@ public class ArrayUtilPartitionTest {
 
             int [] a = generateRandomArray(r, count, 0, 100);
 
-            print(a, 2);
+            println(a, 2);
 
             System.out.print("Input threshold:");
             int threshold = Integer.parseInt(kb.nextLine());

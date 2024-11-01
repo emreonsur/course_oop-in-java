@@ -21,10 +21,10 @@ public class ArrayUtilHistogramDataTest {
             int [] a = generateRandomArray(r, count, 0, 11);
 
             System.out.print("Dizi:");
-            print(a, 2);
+            println(a, 2);
             int [] hist = histogramData(a, 10);
             System.out.print("Sayı dizisi:");
-            print(hist, 2);
+            println(hist, 2);
         }
     }
 

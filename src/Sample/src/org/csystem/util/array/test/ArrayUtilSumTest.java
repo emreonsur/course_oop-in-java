@@ -20,7 +20,7 @@ public class ArrayUtilSumTest {
 
             int [] a = generateRandomArray(r, count, 0, 100);
 
-            print(a, 2);
+            println(a, 2);
             System.out.printf("Total:%d%n", sum(a));
         }
     }

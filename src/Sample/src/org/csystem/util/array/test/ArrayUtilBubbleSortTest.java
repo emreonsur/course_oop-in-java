@@ -20,11 +20,11 @@ public class ArrayUtilBubbleSortTest {
 
             int [] a = generateRandomArray(r, count, 0, 100);
 
-            print(a, 2);
+            println(a, 2);
             boolean descending = r.nextBoolean();
             System.out.printf("Dizi %s olarak sıralanıyor%n", descending ? "azalan sırada" : "artan sırada");
             bubbleSort(a, descending);
-            print(a, 2);
+            println(a, 2);
         }
     }
 

@@ -20,7 +20,7 @@ public class ArrayUtilMinMaxTest {
 
             int [] a = generateRandomArray(r, count, 0, 100);
 
-            print(a, 2);
+            println(a, 2);
             System.out.printf("En büyük eleman:%d%nEn küçük eleman:%d%n", max(a), min(a));
         }
     }

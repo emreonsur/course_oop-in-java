@@ -21,7 +21,7 @@ public class NumericLotteryApp {
             }
 
             while (n-- > 0)
-                ArrayUtil.print(numericLottery.getNumbers(), 2);
+                ArrayUtil.println(numericLottery.getNumbers(), 2);
         }
     }
 

@@ -234,7 +234,12 @@ public class ArrayUtil {
 
     public static void print(int [] a)
     {
-        print(a, ' ', '\n');
+        print(a, 1, ' ');
+    }
+
+    public static void print(int [] a, char sep)
+    {
+        print(a, 1, sep);
     }
 
     public static void print(int [] a, char sep, char end)
@@ -242,19 +247,28 @@ public class ArrayUtil {
         print(a, 1, sep, end);
     }
 
-    public static void print(int [] a, int n)
+    public static void print(int [] a, int n, char sep)
     {
-        print(a, n, ' ', '\n');
+        String fmt = String.format("%%0%dd%c", n, sep);
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int val : a)
+            sb.append(String.format(fmt, val, sep));
+
+        System.out.print(sb.substring(0, sb.length() - 1));
     }
 
     public static void print(int [] a, int n, char sep, char end)
     {
         String fmt = String.format("%%0%dd%c", n, sep);
 
-        for (int val : a)
-            System.out.printf(fmt, val, sep);
+        StringBuilder sb = new StringBuilder();
 
-        System.out.print(end);
+        for (int val : a)
+            sb.append(String.format(fmt, val, sep));
+
+        System.out.printf("%s%s", sb.substring(0, sb.length() - 1), end);
     }
 
     public static void print(int [][] a)
@@ -279,6 +293,26 @@ public class ArrayUtil {
             System.out.printf("%f%c", val, sep);
 
         System.out.print(end);
+    }
+
+    public static void println(int [] a)
+    {
+        println(a, ' ');
+    }
+
+    public static void println(int [] a, char sep)
+    {
+        println(a, 1, sep);
+    }
+
+    public static void println(int [] a, int n)
+    {
+        println(a, n, ' ');
+    }
+
+    public static void println(int [] a, int n, char sep)
+    {
+        print(a, n, sep, '\n');
     }
 
     public static void selectionSort(int [] a)
