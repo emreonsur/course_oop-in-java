@@ -23446,12 +23446,13 @@ public class MutableComplex {
 }
 ```
 
->**Sınıf Çalışması:** Parametresi ile aldığı long türden bir sayının Türkçe okunuşuna geri dönen numToStrTR metodunu NumberUtil sınıfı içerisinde yazınız ve aşağıdaki kod ile test ediniz
->**Açıklamalar:** 
->- Sayının okunuşuna ilişkin elde edilecek yazılar şu şekilde olacaktır: 
->Sayı `12345608` ise okunuşu `on iki milyon üç yüz kırk beş bin altı yüz sekiz`
->Sayı `-12345608` ise okunuşu `eksi on iki milyon üç yüz kırk beş bin altı yüz sekiz`
->- Okunuştaki kelimeler arasında birer adet SPACE karakteri olduğuna dikkat ediniz
+> ***Sınıf Çalışması:*** Parametresi ile aldığı `long` türden bir sayının Türkçe okunuşuna geri dönen `numToStrTR` metodunu `NumberUtil` sınıfı içerisinde yazınız ve aşağıdaki kod ile test ediniz.
+>
+> **Açıklamalar:** 
+> - Sayının okunuşuna ilişkin elde edilecek yazılar şu şekilde olacaktır: 
+ >	- Sayı `12345608` ise okunuşu `on iki milyon üç yüz kırk beş bin altı yüz sekiz`
+> 	- Sayı `-12345608` ise okunuşu `eksi on iki milyon üç yüz kırk beş bin altı yüz sekiz`
+> - Okunuştaki kelimeler arasında birer adet SPACE karakteri olduğuna dikkat ediniz.
 
 ```java
 package org.csystem.util.numeric.test;  
@@ -23467,7 +23468,7 @@ public class NumberUtilNumToStrTRTest {
         Scanner kb = new Scanner(System.in);  
         Random r = new Random();  
   
-        System.out.print("Bir sayı giriniz:");  
+        System.out.print("Bir sayı giriniz: ");  
         int n = kb.nextInt();  
   
         for (int i = 0; i < n; ++i) {  
